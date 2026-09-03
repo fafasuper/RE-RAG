@@ -1,0 +1,13 @@
+# configs/step1_baseline.yaml
+
+step_name: "step1_baseline"
+
+is_baseline: true
+enable_rewrite: false
+enable_retrieval: false
+enable_normalize: false
+
+llm_model_name: "" # 替换模型
+llm_temperature: 0.0
+
+input_data_path: "data/chip-cdn/CHIP-CDN_test.json"

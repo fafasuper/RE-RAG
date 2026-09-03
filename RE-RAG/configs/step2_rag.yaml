@@ -1,0 +1,17 @@
+# configs/step2_rag.yaml
+
+step_name: "step2_rag"
+
+is_baseline: false
+enable_rewrite: false
+enable_retrieval: true
+enable_normalize: false
+
+retrieval_top_k: 5
+icd_lib_path: "data/icd/icd_lib_samples.json"
+faiss_index_path: "artifacts/indexes/faiss/icd/index.faiss"
+
+llm_model_name: ""
+llm_temperature: 0.0
+
+input_data_path: "data/chip-cdn/CHIP-CDN_test.json"

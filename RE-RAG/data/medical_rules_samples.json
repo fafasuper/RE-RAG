@@ -1,0 +1,92 @@
+{
+    "rewrite": [
+        {
+            "id": "R03-1",
+            "category": "症状规范化",
+            "pattern": "[部位]不适",
+            "replacement": "[部位]疼痛",
+            "demo_example": "胸部不适→胸部疼痛"
+        },
+        {
+            "id": "R03-2",
+            "category": "症状规范化",
+            "pattern": "[部位]不舒服",
+            "replacement": "[部位]疼痛",
+            "demo_example": "腹部不舒服→腹部疼痛"
+        },
+        {
+            "id": "R10-1",
+            "category": "药物与治疗反应归类",
+            "pattern": "[具体药名]反应|(.*?)综合症",
+            "replacement": "化疗药物反应或药物性皮炎[药疹]",
+            "demo_example": "希罗达手足综合症 3级→化疗药物反应"
+        },
+        {
+            "id": "R11-1",
+            "category": "综合征与复杂命名统一",
+            "pattern": "[描述词]综合症",
+            "replacement": "[标准综合征名]",
+            "demo_example": "evens 综合症→自身免疫性溶血性贫血"
+        }
+    ],
+    "rerank": [
+        {
+            "id": "R04-1",
+            "category": "检查描述诊断化",
+            "pattern": "[部位]占位",
+            "replacement": "[部位]肿瘤",
+            "demo_example": "肝脏占位→肝脏肿瘤"
+        },
+        {
+            "id": "R04-2",
+            "category": "检查描述诊断化",
+            "pattern": "[部位]阴影",
+            "replacement": "[部位]病变",
+            "demo_example": "肺部阴影→肺部病变"
+        },
+        {
+            "id": "R05-1",
+            "category": "损伤标准化",
+            "pattern": "[部位]外伤",
+            "replacement": "[部位]损伤",
+            "demo_example": "头部外伤→头部损伤"
+        }
+    ],
+    "normalize": [
+        {
+            "id": "R06-1",
+            "category": "治疗状态提取",
+            "pattern": "[疾病]术后",
+            "replacement": "[疾病]##术后状态",
+            "demo_example": "阑尾炎术后→阑尾炎##术后状态"
+        },
+        {
+            "id": "R07-1",
+            "category": "复合诊断拆分",
+            "pattern": "[疾病 A]伴[疾病 B]",
+            "replacement": "[疾病 A]##[疾病 B]",
+            "demo_example": "冠心病伴心衰→冠心病##心力衰竭"
+        },
+        {
+            "id": "R08-1",
+            "category": "分级与分期的保留",
+            "pattern": "[分级系统][等级]级",
+            "replacement": "[分级系统][等级]级",
+            "demo_example": "高血压 III 级→高血压 3级"
+        },
+        {
+            "id": "R09-1",
+            "category": "不确定性处理",
+            "pattern": "疑似[疾病]",
+            "replacement": "[疾病]",
+            "demo_example": "疑似肺炎→肺炎"
+        },
+        {
+            "id": "R09-2",
+            "category": "不确定性处理",
+            "pattern": "可能[疾病]",
+            "replacement": "[疾病]",
+            "demo_example": "可能糖尿病→糖尿病"
+        }
+    ]
+}

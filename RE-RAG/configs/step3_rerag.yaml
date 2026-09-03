@@ -1,0 +1,20 @@
+# configs/step3_re_rag.yaml
+
+step_name: "step3_re_rag"
+
+is_baseline: false
+enable_rewrite: true
+enable_retrieval: true
+enable_normalize: true
+
+rules_path: "rules/medical_rules.csv"
+retrieval_top_k: 5
+icd_lib_path: "data/icd/icd_lib_samples.json"
+faiss_index_path: "artifacts/indexes/faiss/icd/index.faiss"
+
+# 大模型配置
+llm_model_name: ""
+llm_temperature: 0.0
+
+# 路径配置
+input_data_path: "data/chip-cdn/CHIP-CDN_test.json"
